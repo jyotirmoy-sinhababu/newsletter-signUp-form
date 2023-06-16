@@ -1,8 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import { useNavigate } from 'react-router-dom';
 
 import success from '../../assests/img/icon-success.svg';
 
 const FormComp = () => {
+  const navigate = useNavigate();
+  const [emailAdd, setEmailAdd] = useState({});
+  const [err, setErr] = useState({ empty: '', wrongFormat: '' });
+
+  const handleChange = (e) => {
+    setEmailAdd({ ...emailAdd, [e.target.name]: e.target.value });
+  };
+  console.log(emailAdd);
+
+  const handleSubmit = () => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (!emailAdd) {
+      setErr({ ...err, empty: 'please enter your email' });
+    } else if (!emailRegex.test(emailAdd)) {
+      setErr({ ...err, wrongFormat: 'valid email required' });
+    } else {
+      navigate('/success');
+    }
+  };
+
   return (
     <div>
       <div>
@@ -26,15 +49,26 @@ const FormComp = () => {
         </div>
       </div>
       <div>
-        <form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit();
+          }}
+        >
           <label form='html'>Email Address</label>
           <input
+            onChange={(e) => {
+              handleChange(e);
+            }}
             type='email'
             name='email'
             className='email'
             placeholder='email@company.com'
           />
         </form>
+        <div>
+          <button type='submit'>Subscribe to monthly newsletter</button>
+        </div>
       </div>
     </div>
   );
