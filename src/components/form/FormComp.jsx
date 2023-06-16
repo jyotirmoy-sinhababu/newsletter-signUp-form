@@ -6,6 +6,7 @@ import success from '../../assests/img/icon-success.svg';
 
 const FormComp = () => {
   const navigate = useNavigate();
+
   const [emailAdd, setEmailAdd] = useState({});
   const [err, setErr] = useState({ empty: '', wrongFormat: '' });
 
@@ -19,10 +20,11 @@ const FormComp = () => {
 
     if (!emailAdd) {
       setErr({ ...err, empty: 'please enter your email' });
-    } else if (!emailRegex.test(emailAdd)) {
+    } else if (!emailRegex.test(emailAdd.email)) {
       setErr({ ...err, wrongFormat: 'valid email required' });
     } else {
-      navigate('/success');
+      console.log('done');
+      navigate('/next');
     }
   };
 
@@ -55,20 +57,22 @@ const FormComp = () => {
             handleSubmit();
           }}
         >
-          <label form='html'>Email Address</label>
+          <div>
+            <label form='html'>Email Address</label>
+            {err.empty ? <p>{err.empty}</p> : null}
+            {err.wrongFormat ? <p>{err.wrongFormat}</p> : null}
+          </div>
           <input
             onChange={(e) => {
               handleChange(e);
             }}
-            type='email'
+            type='text'
             name='email'
             className='email'
             placeholder='email@company.com'
           />
-        </form>
-        <div>
           <button type='submit'>Subscribe to monthly newsletter</button>
-        </div>
+        </form>
       </div>
     </div>
   );
