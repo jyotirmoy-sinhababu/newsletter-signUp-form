@@ -25,7 +25,17 @@ const FormComp = () => {
           </div>
         </div>
       </div>
-      <div></div>
+      <div>
+        <form>
+          <label form='html'>Email Address</label>
+          <input
+            type='email'
+            name='email'
+            className='email'
+            placeholder='email@company.com'
+          />
+        </form>
+      </div>
     </div>
   );
 };
