@@ -71,7 +71,9 @@ const FormComp = () => {
             className='email'
             placeholder='email@company.com'
           />
-          <button type='submit'>Subscribe to monthly newsletter</button>
+          <button className='frm-btn' type='submit'>
+            Subscribe to monthly newsletter
+          </button>
         </form>
       </div>
     </div>

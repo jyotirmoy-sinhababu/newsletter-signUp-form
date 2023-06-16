@@ -1,8 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import success from '../../assests/img/icon-success.svg';
 
 const Success = () => {
+  const handleClick = () => {
+    navigate('/home');
+  };
+
+  const navigate = useNavigate();
   return (
     <div>
       <div>
@@ -14,7 +20,7 @@ const Success = () => {
         </p>
       </div>
       <div>
-        <button>Dismiss message</button>
+        <button onClick={handleClick}>Dismiss message</button>
       </div>
     </div>
   );
