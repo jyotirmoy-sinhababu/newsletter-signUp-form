@@ -7,7 +7,7 @@ import ImgComp from '../../components/imgSection/ImgComp';
 
 const Home = () => {
   return (
-    <div>
+    <div className='home-cnt'>
       <FormComp />
       <ImgComp />
     </div>

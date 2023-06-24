@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Be+Vietnam+Pro&family=Bruno+Ace+SC&family=Epilogue&family=Montserrat+Alternates:wght@200&family=Oooh+Baby&display=swap');
+
+.formComp-cnt {
+  display: flex;
+  flex-direction: column;
+  gap: 125px;
+  justify-content: center;
+}
+
+.formComp-small {
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  width: 18px;
+  height: 18px;
+}
+
+.formComp-txt-cnt {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formComp-intro-cnt {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.formComp-intro-cnt {
+  padding-bottom: 26px;
+}
+
+.formComp-intro-header {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 65px;
+}
+
+.formComp-intro-para {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 600;
+}
+
+.txt {
+  font-size: 19px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.formComp-form {
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  gap: 10px;
+}
+
+.email {
+  height: 49px;
+  width: 426px;
+  border-radius: 7px;
+  cursor: pointer;
+  padding-left: 19px;
+}
+
+.frm-btn {
+  height: 51px;
+  width: 450px;
+  border-radius: 7px;
+  background-image: linear-gradient(
+    to bottom right,
+    hsl(340, 90%, 71%),
+    rgb(237, 147, 36)
+  );
+  color: aliceblue;
+  font-size: 16px;
+  border: none;
+  font-style: bold;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.err {
+  color: red;
+}

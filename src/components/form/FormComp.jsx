@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import './formCompStyle.css';
+
 import { useNavigate } from 'react-router-dom';
 
 import success from '../../assests/img/icon-success.svg';
@@ -29,38 +31,41 @@ const FormComp = () => {
   };
 
   return (
-    <div>
-      <div>
-        <div>
-          <h1>Stay updated!</h1>
-          <p>Join 60,000+ product managers receiving monthly updates on:</p>
+    <div className='formComp-cnt'>
+      <div className='formComp-txt-cnt'>
+        <div className='formComp-intro-cnt'>
+          <h1 className='formComp-intro-header'>Stay updated!</h1>
+          <p className='formComp-intro-para'>
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
         </div>
         <div>
-          <div>
-            <img src={success} alt='' />
-            <p>Product discovery and building what matters</p>
+          <div className='formComp-small'>
+            <img className='img' src={success} alt='' />
+            <p className='txt'>Product discovery and building what matters</p>
           </div>
-          <div>
-            <img src={success} alt='' />
-            <p>Measuring to ensure updates are a success</p>
+          <div className='formComp-small'>
+            <img className='img' src={success} alt='' />
+            <p className='txt'>Measuring to ensure updates are a success</p>
           </div>
-          <div>
-            <img src={success} alt='' />
-            <p> And much more!</p>
+          <div className='formComp-small'>
+            <img className='img' src={success} alt='' />
+            <p className='txt'> And much more!</p>
           </div>
         </div>
       </div>
-      <div>
+      <div className='formComp-form-cnt'>
         <form
           onSubmit={(e) => {
             e.preventDefault();
             handleSubmit();
           }}
+          className='formComp-form '
         >
-          <div>
+          <div className='form-err-cnt'>
             <label form='html'>Email Address</label>
-            {err.empty ? <p>{err.empty}</p> : null}
-            {err.wrongFormat ? <p>{err.wrongFormat}</p> : null}
+            {err.empty ? <p className='err'>{err.empty}</p> : null}
+            {err.wrongFormat ? <p className='err'>{err.wrongFormat}</p> : null}
           </div>
           <input
             onChange={(e) => {

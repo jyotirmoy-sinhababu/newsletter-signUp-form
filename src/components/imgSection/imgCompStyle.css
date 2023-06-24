@@ -1,0 +1,17 @@
+.mobile-img {
+  display: none;
+}
+
+@media screen and (max-width: 440px) {
+  .main-img {
+    display: none;
+  }
+  .mobile-img {
+    display: block;
+  }
+  .main-img-comp {
+    display: flex;
+    justify-content: center;
+    padding-left: 7%;
+  }
+}
