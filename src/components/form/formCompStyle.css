@@ -1,85 +1,83 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Be+Vietnam+Pro&family=Bruno+Ace+SC&family=Epilogue&family=Montserrat+Alternates:wght@200&family=Oooh+Baby&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Be+Vietnam+Pro&family=Bruno+Ace+SC&family=Caprasimo&family=Epilogue&family=Inter&family=Montserrat+Alternates:wght@200&family=Oooh+Baby&family=Playfair+Display&family=Roboto&display=swap');
+
+.img {
+  width: 15px;
+}
+
+.formComp-subTxt-cnt {
+  display: flex;
+  gap: 12px;
+}
 
 .formComp-cnt {
   display: flex;
   flex-direction: column;
-  gap: 125px;
-  justify-content: center;
+  padding-top: 5rem;
+  gap: 55px;
+  width: 360px;
 }
 
-.formComp-small {
-  display: flex;
-  align-items: center;
-}
-
-.img {
-  width: 18px;
-  height: 18px;
-}
-
-.formComp-txt-cnt {
+.formComp-header-cnt {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-}
-
-.formComp-intro-cnt {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.formComp-intro-cnt {
-  padding-bottom: 26px;
-}
-
-.formComp-intro-header {
-  font-family: 'Abril Fatface', cursive;
-  font-size: 65px;
-}
-
-.formComp-intro-para {
-  font-family: 'Montserrat Alternates', sans-serif;
-  font-weight: 600;
-}
-
-.txt {
-  font-size: 19px;
-  font-family: 'Be Vietnam Pro', sans-serif;
-}
-
-.formComp-form {
-  display: flex;
-  flex-direction: column;
-  height: 250px;
   gap: 10px;
 }
 
-.email {
-  height: 49px;
-  width: 426px;
-  border-radius: 7px;
-  cursor: pointer;
-  padding-left: 19px;
+.header {
+  font-family: 'Roboto', sans-serif;
+  font-size: 55px;
+  font-weight: 700;
 }
 
-.frm-btn {
-  height: 51px;
-  width: 450px;
-  border-radius: 7px;
-  background-image: linear-gradient(
-    to bottom right,
-    hsl(340, 90%, 71%),
-    rgb(237, 147, 36)
-  );
-  color: aliceblue;
+.text {
   font-size: 16px;
-  border: none;
-  font-style: bold;
-  font-weight: 400;
-  cursor: pointer;
+  font-family: 'Inter', sans-serif;
 }
 
-.err {
-  color: red;
+.form-cnt {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputField {
+  width: 340px;
+  height: 41px;
+  border-radius: 7px;
+}
+
+.btn {
+  width: 342px;
+  height: 47px;
+  border-radius: 7px;
+  cursor: pointer;
+  background-color: transparent;
+  color: aliceblue;
+  background-image: linear-gradient(
+    to right,
+    rgb(232, 96, 118),
+    rgb(232, 156, 16)
+  );
+  border: none;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 440px) {
+  .formComp-cnt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5rem;
+    gap: 35px;
+    width: 400px;
+  }
+  .formComp-header-cnt {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+  }
 }

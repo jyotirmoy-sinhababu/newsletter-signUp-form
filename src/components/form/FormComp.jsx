@@ -32,54 +32,33 @@ const FormComp = () => {
 
   return (
     <div className='formComp-cnt'>
-      <div className='formComp-txt-cnt'>
-        <div className='formComp-intro-cnt'>
-          <h1 className='formComp-intro-header'>Stay updated!</h1>
-          <p className='formComp-intro-para'>
-            Join 60,000+ product managers receiving monthly updates on:
-          </p>
+      <div className='formComp-header-cnt'>
+        <h1 className='header'>Stay updated!</h1>
+        <p className='text'>
+          {' '}
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+      </div>
+      <div className=' formComp-txt-cnt'>
+        <div className=' formComp-subTxt-cnt'>
+          <img className='img' src={success} alt='' />
+          <p className='text'> Product discovery and building what matters</p>
         </div>
-        <div>
-          <div className='formComp-small'>
-            <img className='img' src={success} alt='' />
-            <p className='txt'>Product discovery and building what matters</p>
-          </div>
-          <div className='formComp-small'>
-            <img className='img' src={success} alt='' />
-            <p className='txt'>Measuring to ensure updates are a success</p>
-          </div>
-          <div className='formComp-small'>
-            <img className='img' src={success} alt='' />
-            <p className='txt'> And much more!</p>
-          </div>
+        <div className=' formComp-subTxt-cnt'>
+          <img className='img' src={success} alt='' />
+          <p className='text'> Measuring to ensure updates are a success</p>
+        </div>
+        <div className=' formComp-subTxt-cnt'>
+          <img className='img' src={success} alt='' />
+          <p className='text'> And much more!</p>
         </div>
       </div>
-      <div className='formComp-form-cnt'>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSubmit();
-          }}
-          className='formComp-form '
-        >
-          <div className='form-err-cnt'>
-            <label form='html'>Email Address</label>
-            {err.empty ? <p className='err'>{err.empty}</p> : null}
-            {err.wrongFormat ? <p className='err'>{err.wrongFormat}</p> : null}
-          </div>
-          <input
-            onChange={(e) => {
-              handleChange(e);
-            }}
-            type='text'
-            name='email'
-            className='email'
-            placeholder='email@company.com'
-          />
-          <button className='frm-btn' type='submit'>
-            Subscribe to monthly newsletter
-          </button>
+      <div className='form-cnt'>
+        <label className='text email'>Email address</label>
+        <form className='form'>
+          <input type='text' className='inputField' />
         </form>
+        <button className='btn'>Subscribe to monthly newsletter</button>
       </div>
     </div>
   );
