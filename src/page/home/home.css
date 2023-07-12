@@ -5,8 +5,9 @@
   gap: 25px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 820px) {
   .home-cnt {
     flex-direction: column-reverse;
+    gap: 10px;
   }
 }
