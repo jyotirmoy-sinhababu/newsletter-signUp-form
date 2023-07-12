@@ -62,6 +62,10 @@
   font-size: 16px;
 }
 
+.err {
+  color: rgb(241, 96, 96);
+}
+
 @media screen and (max-width: 840px) {
   .formComp-cnt {
     display: flex;

@@ -10,22 +10,18 @@ const FormComp = () => {
   const navigate = useNavigate();
 
   const [emailAdd, setEmailAdd] = useState({});
-  const [err, setErr] = useState({ empty: '', wrongFormat: '' });
+  const [err, setErr] = useState();
 
   const handleChange = (e) => {
     setEmailAdd({ ...emailAdd, [e.target.name]: e.target.value });
   };
-  console.log(emailAdd);
 
   const handleSubmit = () => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    if (!emailAdd) {
-      setErr({ ...err, empty: 'please enter your email' });
-    } else if (!emailRegex.test(emailAdd.email)) {
-      setErr({ ...err, wrongFormat: 'valid email required' });
+    if (!emailRegex.test(emailAdd.email)) {
+      setErr('valid email required');
     } else {
-      console.log('done');
       navigate('/next');
     }
   };
@@ -58,7 +54,11 @@ const FormComp = () => {
         <form className='form'>
           <input type='text' className='inputField' />
         </form>
-        <button className='btn'>Subscribe to monthly newsletter</button>
+        {err ? <p className='err'>{err}</p> : null}
+
+        <button onClick={handleSubmit} className='btn'>
+          Subscribe to monthly newsletter
+        </button>
       </div>
     </div>
   );
